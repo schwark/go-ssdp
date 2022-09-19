@@ -118,9 +118,14 @@ func (a *Advertiser) handleRaw(from net.Addr, raw []byte) error {
 }
 
 func buildOK(st, usn, location, server string, maxAge int) []byte {
+	addr, err := multicast.SendAddr()
+	if err != nil {
+		return []byte{}
+	}
 	// bytes.Buffer#Write() is never fail, so we can omit error checks.
 	b := new(bytes.Buffer)
 	b.WriteString("HTTP/1.1 200 OK\r\n")
+	fmt.Fprintf(b, "HOST: %s\r\n", addr)
 	fmt.Fprintf(b, "EXT: \r\n")
 	fmt.Fprintf(b, "ST: %s\r\n", st)
 	fmt.Fprintf(b, "USN: %s\r\n", usn)

@@ -145,6 +145,7 @@ func TestSearch_ServiceRawHeader(t *testing.T) {
 		"Location":      "location:search+servicerawheader",
 		"Server":        "server:search+servicerawheader",
 		"Cache-Control": "max-age=600",
+		"Host":          "239.255.255.250:1900",
 		"Ext":           "",
 	}
 	for i, s := range srvs {

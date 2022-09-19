@@ -50,6 +50,7 @@ func TestAdvertise_Alive(t *testing.T) {
 		"Usn":           "usn:advertise+alive",
 		"Location":      "location:advertise+alive",
 		"Server":        "server:advertise+alive",
+		"Host":          "239.255.255.250:1900",
 		"Cache-Control": "max-age=600",
 	}
 	for i, m := range mm {
@@ -121,9 +122,10 @@ func TestAdvertise_Bye(t *testing.T) {
 	port = ":" + port
 
 	expHdr := map[string]string{
-		"Nts": "ssdp:byebye",
-		"Nt":  "test:advertise+bye",
-		"Usn": "usn:advertise+bye",
+		"Nts":  "ssdp:byebye",
+		"Nt":   "test:advertise+bye",
+		"Usn":  "usn:advertise+bye",
+		"Host": "239.255.255.250:1900",
 	}
 	for i, m := range mm {
 		if strings.HasSuffix(port, m.From.String()) {
