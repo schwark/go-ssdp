@@ -11,8 +11,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/koron/go-ssdp/internal/multicast"
-	"github.com/koron/go-ssdp/internal/ssdplog"
+	"github.com/schwark/go-ssdp/internal/multicast"
+	"github.com/schwark/go-ssdp/internal/ssdplog"
 )
 
 // Service is discovered service.

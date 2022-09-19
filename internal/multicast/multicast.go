@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/koron/go-ssdp/internal/ssdplog"
+	"github.com/schwark/go-ssdp/internal/ssdplog"
 	"golang.org/x/net/ipv4"
 )
 
